@@ -1,4 +1,5 @@
-# Guidelines
+# AGENTS.md
+## Guidelines
 - Cuando trabajemos en algo nuevo sea un feature, fix, hot fix, etc..., siempre antes de hacer commit hay que jalar cambios del remoto y actualizar el local, obviamente si ya tenemos cambios deberemos meter al stash los cambios que tenemos en el local y tras crear una nueva rama despues de actualizar el local con el remoto, entonces volveremos a colocar los cambios que hicimos con stash pop.
 - Deberemos identificar el tipo de nombre que le daremos a los branches de git por ejemplo:
     - Cosas nuevas o nuevos Features sera -> Feature/[Descripcion de lo que se esta trabajando]
@@ -13,9 +14,11 @@
     - Si hay un suggestion/advice/information usaras si puedes texto en color azul o un emoji al inicio asi 🔵  + el mensaje informativo.
     - Si todo esta OK usaras texto en color verde en si puedes o un emoji al inicio de 🟢 + el mensaje del resultado.
 
-# Applies for
+## Applies for
 - Los Lineamientos aplican en general para cualquier proyecto.
 
-# Preferences
+## Preferences
 - Me gusta trabajar con functional components en react.
 - Los estilos los mantendremos en sus respectivos archivos y solo en casos necesarios o donde aplique usaremos StyleComponents o lo que sea necesario.
+- Usar siempre comillas dobles para los strings.
+- En caso de tener que poner comillas dentro de un texto para citar otro texto se tendra que escapar el caracter `"` como sea que sea haga en el lenguaje que se esté utilizando.
