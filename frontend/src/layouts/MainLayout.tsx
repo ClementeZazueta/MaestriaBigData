@@ -1,27 +1,30 @@
-import type { PropsWithChildren } from 'react';
+import type { PropsWithChildren } from "react";
 
-import { Hero } from '@/components/Hero';
-import { Section } from '@/components/Section';
+import { Hero } from "@/components/Hero";
+import type { HeroContent, Language, LocalizedText } from "@/types/portfolio";
 
-export function MainLayout({ children }: PropsWithChildren) {
+type MainLayoutProps = PropsWithChildren<{
+  hero: HeroContent;
+  language: Language;
+  onLanguageChange: (language: Language) => void;
+  footerNote: LocalizedText;
+}>;
+
+export function MainLayout({
+  children,
+  hero,
+  language,
+  onLanguageChange,
+  footerNote,
+}: MainLayoutProps) {
   return (
     <div className="page-shell">
-      <Hero />
-      <main>
-        <Section
-          id="introduccion"
-          title="Bienvenido"
-          subtitle="Un espacio para documentar mi avance académico y profesional durante la maestría."
-        >
-          <p>
-            Este portafolio busca consolidar aprendizajes, evidencias y reflexiones de cada materia para
-            mostrar de forma clara mi crecimiento en ciencia de datos, analítica y toma de decisiones.
-          </p>
-        </Section>
-        {children}
-      </main>
+      <Hero content={hero} language={language} onLanguageChange={onLanguageChange} />
+      <main>{children}</main>
       <footer className="footer">
-        <p>© {new Date().getFullYear()} · Portafolio de Maestría</p>
+        <p>
+          © {new Date().getFullYear()} · {footerNote[language]}
+        </p>
       </footer>
     </div>
   );
